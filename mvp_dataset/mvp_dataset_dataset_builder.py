@@ -143,7 +143,7 @@ class MvpDataset(tfds.core.GeneratorBasedBuilder):
                     },
                     'action': action,
                     'discount': 1.0,
-                    'reward': float(i == (len(ep_obs) - 1)),
+                    'reward': float(t == (len(ep_obs) - 1)),
                     'is_first': t == 0,
                     'is_last': t == (len(ep_obs) - 1),
                     'is_terminal': t == (len(ep_obs) - 1),
