@@ -1,5 +1,3 @@
-TODO(example_dataset): Markdown description of your dataset.
-Description is **formatted** as markdown.
+# RPT Dataset
 
-It should also contain any processing which has been applied (if any),
-(e.g. corrupted example skipped, images cropped,...):
+This dataset provides trajectories collected for the [Robot Learning with Sensorimotor Pre-training](https://arxiv.org/abs/2306.10007) paper. Please see the paper for more details.
