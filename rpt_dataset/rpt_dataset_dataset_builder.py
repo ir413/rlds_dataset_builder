@@ -34,18 +34,18 @@ class RptDataset(tfds.core.GeneratorBasedBuilder):
                             encoding_format='png',
                             doc='Hand camera RGB observation.',
                         ),
-                        'left_image': tfds.features.Image(
-                            shape=(480, 640, 3),
-                            dtype=np.uint8,
-                            encoding_format='png',
-                            doc='Left camera RGB observation.',
-                        ),
-                        'right_image': tfds.features.Image(
-                            shape=(480, 640, 3),
-                            dtype=np.uint8,
-                            encoding_format='png',
-                            doc='Right camera RGB observation.',
-                        ),
+                        #'left_image': tfds.features.Image(
+                        #    shape=(480, 640, 3),
+                        #    dtype=np.uint8,
+                        #    encoding_format='png',
+                        #    doc='Left camera RGB observation.',
+                        #),
+                        #'right_image': tfds.features.Image(
+                        #    shape=(480, 640, 3),
+                        #    dtype=np.uint8,
+                        #    encoding_format='png',
+                        #    doc='Right camera RGB observation.',
+                        #),
                         'joint_pos': tfds.features.Tensor(
                             shape=(7,),
                             dtype=np.float32,
@@ -120,8 +120,8 @@ class RptDataset(tfds.core.GeneratorBasedBuilder):
 
                 ep_obs.append({
                     "hand_image": obs["rgb_hand"],
-                    "left_image": obs["rgb_left"],
-                    "right_image": obs["rgb_right"],
+                    #"left_image": obs["rgb_left"],
+                    #"right_image": obs["rgb_right"],
                     "joint_pos": np.array(obs["joint_pos"]).astype(np.float32),
                     "gripper": 1 - obs["gripper_width" if "gripper_width" in obs else "gripper_closed"]
                 })
@@ -142,8 +142,8 @@ class RptDataset(tfds.core.GeneratorBasedBuilder):
                 episode.append({
                     'observation': {
                         'hand_image': s_t['hand_image'],
-                        'left_image': s_t['left_image'],
-                        'right_image': s_t['right_image'],
+                        #'left_image': s_t['left_image'],
+                        #'right_image': s_t['right_image'],
                         'joint_pos': s_t['joint_pos'],
                         'gripper': s_t['gripper'],
                     },
